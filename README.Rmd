@@ -31,7 +31,7 @@ devtools::install_github("andrie/discretizer")
 
 To illustrate discretization, create a strange attractor with 10 million points, and the plot:
 
-(This takes ~10 seconds on my laptop)
+(This takes ~10 on my laptop.)
 
 ```{r example}
 library(magrittr)
@@ -43,7 +43,7 @@ c(-0.8, 0.4, -1.1, 0.5, -0.6, -0.1, -0.5, 0.8, 1.0, -0.3, -0.6, -0.3, -1.2, -0.3
   trim_quantiles(q = 0.05) %>% 
   discretize() %>% 
   log1p() %>% 
-  recolor("BuPu") %>% 
+  recolour("BuPu") %>% 
   plot()
 ```
 

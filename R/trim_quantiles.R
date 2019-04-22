@@ -6,6 +6,8 @@
 #' @return A data frame
 #' @export
 #'
+#' @importFrom stats na.omit quantile
+#'
 trim_quantiles <- function(x, q = 0.05){
   x_range <- quantile(x$x, probs = c(q, 1-q), na.rm = TRUE)
   y_range <- quantile(x$y, probs = c(q, 1-q), na.rm = TRUE)

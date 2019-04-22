@@ -31,7 +31,7 @@ discretize <- function(.data, dims = c(600, 600), x = "x", y = "y"){
 #' @param x0 Initial value for x
 #' @param y0 Initial value for y
 #'
-#' @return
+#' @return Data frame with columns `x` and `y`, and `n` rows.
 #' @export
 #'
 strange_attractor <- function(a, n, x0 = 0, y0 = 0){

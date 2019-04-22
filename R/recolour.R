@@ -21,8 +21,9 @@ invert <- function(x) {
 #' Use palette from ColorBrewer to recolour the image
 #'
 #' @param x Matrix
-#' @param palette ColorBrewer palette
+#' @param palette ColorBrewer palette. This value is passed to [scales::col_numeric()]
 #' @param zero_colour Colour to use for zero and NA values
+#' @param invert If `TRUE`, inverts the colour scale
 #'
 #' @return Matrix
 #' @export
@@ -42,4 +43,5 @@ recolour <- function(x, palette = "Blues", zero_colour = "#FFFFFF", invert = FAL
 }
 
 #' @export
+#' @rdname recolour
 recolor <- recolour

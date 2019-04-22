@@ -15,6 +15,9 @@ strange_attractor(a, n, x0 = 0, y0 = 0)
 
 \item{y0}{Initial value for y}
 }
+\value{
+Data frame with columns \code{x} and \code{y}, and \code{n} rows.
+}
 \description{
 Generate strange attractor.
 }

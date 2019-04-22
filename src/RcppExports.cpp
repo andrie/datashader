@@ -5,23 +5,38 @@
 
 using namespace Rcpp;
 
-// strange_attractor
-List strange_attractor(int n, double x0, double y0, NumericVector a);
-RcppExport SEXP _discretizer_strange_attractor(SEXP nSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP aSEXP) {
+// discretize_cpp
+NumericMatrix discretize_cpp(DataFrame data, NumericVector dims, NumericVector x_range, NumericVector y_range);
+RcppExport SEXP _discretizer_discretize_cpp(SEXP dataSEXP, SEXP dimsSEXP, SEXP x_rangeSEXP, SEXP y_rangeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< DataFrame >::type data(dataSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type dims(dimsSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x_range(x_rangeSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y_range(y_rangeSEXP);
+    rcpp_result_gen = Rcpp::wrap(discretize_cpp(data, dims, x_range, y_range));
+    return rcpp_result_gen;
+END_RCPP
+}
+// strange_attractor_cpp
+List strange_attractor_cpp(NumericVector a, int n, double x0, double y0);
+RcppExport SEXP _discretizer_strange_attractor_cpp(SEXP aSEXP, SEXP nSEXP, SEXP x0SEXP, SEXP y0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type a(aSEXP);
     Rcpp::traits::input_parameter< int >::type n(nSEXP);
     Rcpp::traits::input_parameter< double >::type x0(x0SEXP);
     Rcpp::traits::input_parameter< double >::type y0(y0SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type a(aSEXP);
-    rcpp_result_gen = Rcpp::wrap(strange_attractor(n, x0, y0, a));
+    rcpp_result_gen = Rcpp::wrap(strange_attractor_cpp(a, n, x0, y0));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_discretizer_strange_attractor", (DL_FUNC) &_discretizer_strange_attractor, 4},
+    {"_discretizer_discretize_cpp", (DL_FUNC) &_discretizer_discretize_cpp, 4},
+    {"_discretizer_strange_attractor_cpp", (DL_FUNC) &_discretizer_strange_attractor_cpp, 4},
     {NULL, NULL, 0}
 };
 

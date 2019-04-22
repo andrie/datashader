@@ -17,6 +17,7 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     reticulate,
     Rcpp,
-    scales
+    scales,
+    assertthat
 LinkingTo: 
     Rcpp

@@ -1,11 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
-
-
 // [[Rcpp::export]]
-List strange_attractor(int n, double x0, double y0, NumericVector a) {
+List strange_attractor_cpp(NumericVector a, int n, double x0, double y0) {
   double a1 = a[0];
   double a2 = a[1];
   double a3 = a[2];

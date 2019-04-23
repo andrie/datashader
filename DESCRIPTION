@@ -22,4 +22,5 @@ Imports:
 LinkingTo: 
     Rcpp
 Suggests: 
-    rmarkdown
+    rmarkdown,
+    testthat

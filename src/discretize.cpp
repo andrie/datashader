@@ -1,7 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-float scale_01(float x, float min_x, float max_x){
+double scale_01(double x, double min_x, double max_x){
+  if(max_x == min_x) return 0.5;
   return ((x - min_x) / (max_x - min_x));
 }
 
